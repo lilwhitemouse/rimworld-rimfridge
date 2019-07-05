@@ -69,9 +69,9 @@ namespace RimFridge
                 {
                     foreach (Thing thing in things)
                     {
-                        if (thing?.def.defName.StartsWith("RimFridge") == true)
+                        Building_Refrigerator refridge;
+                        if ((refridge = thing as Building_Refrigerator)!=null)
                         {
-                            Building_Refrigerator refridge = (Building_Refrigerator)thing;
                             float ruinedPercent = (float)RuinedPercentFI.GetValue(__instance);
                             if (refridge.CurrentTemp > __instance.Props.maxSafeTemperature)
                             {
